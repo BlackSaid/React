@@ -12,6 +12,22 @@ import datajson from './data.json';
 console.log(datajson);
 
 class App extends React.Component {
+  
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      valeur: 'daily'
+    }
+    this.modifValeur = this.modifValeur.bind(this) 
+  }
+  
+  modifValeur(element) {
+    
+    this.setState({valeur: element})
+
+    console.log(this.state.valeur);
+  }
 
   render() { 
     return (
@@ -22,6 +38,8 @@ class App extends React.Component {
           <div className="col-lg-3 col-12">
             <ProfileCard
               source= {imgJeremy}
+              modif = {this.modifValeur}
+              
               />
           </div>
           
@@ -31,8 +49,8 @@ class App extends React.Component {
             backgroundColor =  "hsl(15, 100%, 70%)"
             titre = {datajson[0].title}
             style = "hsl(15, 100%, 70%)"
-            heure = {datajson[0].timeframes.daily.current}
-            hour = {datajson[0].timeframes.daily.previous}
+            heure = {datajson[0].timeframes[this.state.valeur].current}
+            hour = {datajson[0].timeframes[this.state.valeur].previous}
             />
             
             <TimeCard 
@@ -40,11 +58,9 @@ class App extends React.Component {
             backgroundColor = "hsl(145, 58%, 55%)"
             titre = {datajson[3].title}
             style="hsl(145, 58%, 55%)"
-            heure = {datajson[3].timeframes.daily.current}
-            hour = {datajson[3].timeframes.daily.previous}
+            heure = {datajson[3].timeframes[this.state.valeur].current}
+            hour = {datajson[3].timeframes[this.state.valeur].previous}
             />
-
-
             </div>
 
           <div className="col-lg-3 col-12">
@@ -53,8 +69,8 @@ class App extends React.Component {
             titre = {datajson[1].title}
             backgroundColor = "hsl(195, 74%, 62%)"
             style="hsl(195, 74%, 62%)"
-            heure = {datajson[1].timeframes.daily.current}
-            hour = {datajson[1].timeframes.daily.previous}
+            heure = {datajson[1].timeframes[this.state.valeur].current}
+            hour = {datajson[1].timeframes[this.state.valeur].previous}
             />
 
             <TimeCard 
@@ -62,8 +78,8 @@ class App extends React.Component {
             logo = {imgSocial}
             backgroundColor = "hsl(264, 64%, 52%)"
             style = "hsl(264, 64%, 52%)"
-            heure = {datajson[4].timeframes.daily.current}
-            hour = {datajson[4].timeframes.daily.previous}
+            heure = {datajson[4].timeframes[this.state.valeur].current}
+            hour = {datajson[4].timeframes[this.state.valeur].previous}
             />
 
 
@@ -75,8 +91,8 @@ class App extends React.Component {
             logo = {imgStudy}
             backgroundColor = "hsl(348, 100%, 68%)"
             style = "hsl(348, 100%, 68%)"
-            heure = {datajson[2].timeframes.daily.current}
-            hour = {datajson[2].timeframes.daily.previous}
+            heure = {datajson[2].timeframes[this.state.valeur].current}
+            hour = {datajson[2].timeframes[this.state.valeur].previous}
             />
 
             <TimeCard 
@@ -84,8 +100,8 @@ class App extends React.Component {
             logo = {imgSelf}
             backgroundColor = "hsl(43, 84%, 65%)"
             style = "hsl(43, 84%, 65%)"
-            heure = {datajson[5].timeframes.daily.current}
-            hour = {datajson[5].timeframes.daily.previous}
+            heure = {datajson[5].timeframes[this.state.valeur].current}
+            hour = {datajson[5].timeframes[this.state.valeur].previous}
             />
             
             

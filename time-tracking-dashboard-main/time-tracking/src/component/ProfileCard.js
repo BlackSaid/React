@@ -15,14 +15,15 @@ class ProfileCard extends Component {
                     <h1 className='text-white'>Jeremy Robson</h1>
                 </div>
                     
-                <div className="bgProfilebas container my-4">
-                    <p className="text-white">Daily</p>
-                    <p className="text-white">Weekly</p>
-                    <p className="text-white">Monthly</p>
+                <div className="bgProfilebas container my-4 d-flex flex-column">
+                    
+                    <p onClick={() => this.props.modif("daily")} className="text-white py-1">Daily</p>
+                    <p onClick={() => this.props.modif("weekly")} className="text-white py-1">Weekly</p>
+                    <p onClick={() => this.props.modif("monthly")} className="text-white py-1">Monthly</p>
                 </div>
             </div>
         );
-    }
+    } 
 }
 
 export default ProfileCard;
