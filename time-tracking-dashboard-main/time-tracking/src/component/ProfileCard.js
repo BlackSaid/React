@@ -17,9 +17,9 @@ class ProfileCard extends Component {
                     
                 <div className="bgProfilebas container my-4 d-flex flex-column">
                     
-                    <p onClick={() => this.props.modif("daily")} className="text-white py-1">Daily</p>
-                    <p onClick={() => this.props.modif("weekly")} className="text-white py-1">Weekly</p>
-                    <p onClick={() => this.props.modif("monthly")} className="text-white py-1">Monthly</p>
+                    <p onClick={() => this.props.modif("daily")} className="text-white py-1 fs-5">Daily</p>
+                    <p onClick={() => this.props.modif("weekly")} className="text-white py-1 fs-5">Weekly</p>
+                    <p onClick={() => this.props.modif("monthly")} className="text-white py-1 fs-5">Monthly</p>
                 </div>
             </div>
         );

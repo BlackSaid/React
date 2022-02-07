@@ -29,6 +29,7 @@ class App extends React.Component {
     console.log(this.state.valeur);
   }
 
+
   render() { 
     return (
       <div className="d-flex align-items-center containerDzeub ">
