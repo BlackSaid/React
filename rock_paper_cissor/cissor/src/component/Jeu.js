@@ -17,12 +17,43 @@ class Jeu extends React.Component {
             color: '',
             image: '',
             score: 0,
-            
         }
         console.log(this.state);
     }
-    updateToScore = (e)=>{}
+
+    // onRecuperationParent = (resultat)=>{
+        
+    //     if (resultat === 'YOU WIN'){
+    //         this.setState({score : this.state.score += 1})
+
+    //     } else if (resultat === 'YOU LOSE'){
+    //         this.setState({score : this.state.score -= 1})
+
+    //     } else if (resultat === 'DRAW'){
+    //         this.setState({score : this.state.score = 0})
+    //     }
+    // }
     
+    onRecuperationParent=(resultat)=>{
+
+        let x = {...this.state}
+
+        if (resultat === 'YOU WIN'){
+            x.score += 1
+            console.log('plop');
+            
+        } else if (resultat === 'YOU LOSE'){
+            x.score -= 1
+            console.log('plop2');
+            
+        } else if (resultat === 'DRAW'){
+            x.score += 0
+            console.log('plop3');
+        }
+        // this.setState({score: x.score})
+    }
+
+
     change =(x, c, z)=>{this.setState({affichage: x, color: c, image: z})}
     render() { 
         return (
@@ -45,7 +76,7 @@ class Jeu extends React.Component {
                 <div>
                     <div>
                     <Game2
-                    updateToScore = {this.updateToScore}
+                    onRecuperation = {this.onRecuperationParent}
                     modif = {this.state.color}
                     image = {this.state.image}
                     af = {this.change}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Header extends React.Component {
-    
+
     render() { 
         return (
             <div className="d-flex justify-content-between my-5 bordureB">
