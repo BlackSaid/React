@@ -56,7 +56,6 @@ class Game2 extends React.Component {
 
     render() {
 
-
         return (
             <div>
 
